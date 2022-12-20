@@ -1,5 +1,5 @@
 const client_id="30b400128e154cc99911c972a810ee05";
-const redirect_uri = "http://localhost:3000/";
+const redirect_uri = "http://kwangya.surge.sh/";
 // const state = generateRandomString(16);
 const scope = "playlist-modify-public";
 
