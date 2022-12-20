@@ -29,7 +29,8 @@ class Track extends React.Component {
             <div className="Track">
                 <div className="Track-information">
                     <h3>{this.props.track.name}</h3>
-                    <p>{this.props.track.artist} | {this.props.track.album}</p>
+                    <p><span className="artist-name">{this.props.track.artist}</span> | {this.props.track.album}</p>
+                    <p>{this.props.track.release_date} | <span className="popularity">Popularity Score: {this.props.track.popularity}</span></p>
                 </div>
                 {this.renderAction()}
             </div>

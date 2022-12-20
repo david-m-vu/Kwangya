@@ -1,5 +1,5 @@
 const client_id="30b400128e154cc99911c972a810ee05";
-const redirect_uri = "http://stan-aespa.surge.sh/";
+const redirect_uri = "http://localhost:3000/";
 // const state = generateRandomString(16);
 const scope = "playlist-modify-public";
 
@@ -49,7 +49,10 @@ let Spotify = {
                         name: track.name,
                         artist: track.artists[0].name,
                         album: track.album.name,
-                        uri: track.uri 
+                        uri: track.uri,
+                        preview_url: track.preview_url,
+                        popularity: track.popularity,
+                        release_date: track.album.release_date,
                     }
                 });
                 return tracks;
@@ -60,6 +63,7 @@ let Spotify = {
     },
 
     async savePlaylist(name, trackURIs) {
+        this.getAccessToken()
         if (name && trackURIs) {
             let headers = {Authorization: "Bearer " + this.getAccessToken()};
             try {

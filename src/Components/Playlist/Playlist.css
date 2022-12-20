@@ -1,5 +1,6 @@
 .Playlist {
     display: flex;
+    position: relative;
     flex-direction: column;
     align-items: center;
     overflow-y: scroll;
@@ -11,7 +12,7 @@
   }
   
   .Playlist input {
-    width: 100%;
+    width: 65%;
     border: 0;
     outline: 0;
     background: transparent;
@@ -39,11 +40,22 @@
   .Playlist-save:hover {
     background-color: rgba(108, 65, 233, .7);
   }
+
+  .rewrite-icon {
+    pointer-events: none;
+    position: absolute;
+    max-width: 40px;
+    top: 40px;
+    left: 81%;
+    -webkit-filter: invert(1); /*invert the color of the image*/
+    filter: invert(1);
+  }
   
   ::-webkit-scrollbar {
       width: 0px;
       background: transparent;
   }
+
   
   @media only screen and (max-width: 1020px) {
     .Playlist {

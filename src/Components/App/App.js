@@ -58,11 +58,15 @@ class App extends React.Component {
       searchResults: results
     })
   }
+
+  componentDidMount() {
+    Spotify.getAccessToken();
+  }
   
   render() {
     return (
       <div>
-      <h1>Win<span className="highlight">ter</span></h1>
+      <h1>Kw<span className="highlight">angya</span></h1>
       <div className="App">
         <SearchBar onSearch={this.search}/>
         <div className="App-playlist">
