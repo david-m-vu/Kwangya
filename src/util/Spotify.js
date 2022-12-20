@@ -36,6 +36,7 @@ let Spotify = {
     },
 
     async search(term) {
+        this.getAccessToken()
         try {
             const response = await fetch(APIEndpoint + "/search?type=track&q=" + term, 
             {headers: {Authorization: "Bearer " + this.getAccessToken()}})
